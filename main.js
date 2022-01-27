@@ -2,11 +2,17 @@
 const $btn = document.getElementById('btn-kick');
 const $btn2 = document.getElementById('btn-kick2');
 const $logs = document.querySelector('#logs');
-
+let SH1=0,SH2=0;
+let Kol1=6,Kol2=6;
 function random(num) {
     return Math.ceil(Math.random() * num);
 }
-
+let Stop=(a=0,b=6,k)=> {
+    if (a>=b){ 
+        k.disabled = true;
+    }
+    return (a+'/'+b);
+}
 const character = {
     name: 'Pikachu',
     type: 'electric',
@@ -71,6 +77,7 @@ const enemy = {
             this.damageHP=0;
             alert('Бедный '+ this.name+' проиграл бой!');
             $btn2.disabled = true;
+
         }else{
             this.damageHP -= count;
         }
@@ -86,13 +93,15 @@ const enemy = {
 $btn.addEventListener('click', function(){
     console.log('Kick');
     character.changeHP(random(20));
+    SH1++;
+    console.log (Stop(SH1,Kol1,$btn));
 });
-
 $btn2.addEventListener('click', function(){
     console.log('Kick');
     enemy.changeHP(random(20));
+    SH2++;
+    console.log (Stop(SH2,Kol2,$btn2));
 });
-
 function renderHP(){
     character.renderHPLife();
     character.renderProgressbarHP();
