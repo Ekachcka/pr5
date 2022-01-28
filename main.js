@@ -7,7 +7,7 @@ let Kol1=6,Kol2=6;
 function random(num) {
     return Math.ceil(Math.random() * num);
 }
-let Stop=(a=0,b=6,k)=> {
+const Stop=(a=0,b=6,k)=> {
     if (a>=b){ 
         k.disabled = true;
     }
@@ -109,10 +109,6 @@ function renderHP(){
     enemy.renderProgressbarHP();
 };
 
-function init() {
-    console.log('Start Game!');
-    // renderHP(character);
-    // renderHP(enemy);
-};
+const init = () => console.log('Start Game!');
 init();
 
