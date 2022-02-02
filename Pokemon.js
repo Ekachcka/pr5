@@ -1,111 +1,83 @@
+// export const character = {
+//     name: 'Pikachu',
+//     type: 'electric',
+//     defaultHP: 100,
+//     damageHP: 100,
+//     elHP: document.getElementById('health-character'),
+//     elProgressbar: document.getElementById('progressbar-character'),
 
-const $btn = document.getElementById('btn-kick');
-const $btn2 = document.getElementById('btn-kick2');
-const $logs = document.querySelector('#logs');
-
-function random(num) {
-    return Math.ceil(Math.random() * num);
-}
-
-const character = {
-    name: 'Pikachu',
-    defaultHP: 100,
-    damageHP: 100,
-    elHP: document.getElementById('health-character'),
-    elProgressbar: document.getElementById('progressbar-character'),
-    greet: function(){
-        return 'Hi, my name is ' + this.name;
-    },  
+//     greet: function(){
+//         return 'Hi, my name is ' + character.name;
+//     },   
     
-    
-    renderHPLife: function(){
-        const $character = document.getElementById('health-character');
-        console.log($character.innerText);
-        $character.innerText=this.damageHP+'/'+ this.defaultHP;
-    },    
-    renderHPLife: function(){
-        this.elHP.innerText=this.damageHP + ' / ' + this.defaultHP;
-    },    
-    renderProgressbarHP: function(){
-        this.elProgressbar.style.width = this.damageHP + '%';
-    },
+//     renderHPLife: function(){
+//         const $character = document.getElementById('health-character');
+//         console.log($character.innerText);
+//         $character.innerText=character.damageHP+'/'+ character.defaultHP;
+//     },    
+//     renderHPLife: function(){
+//         character.elHP.innerText=character.damageHP + ' / ' + character.defaultHP;
+//     },    
+//     renderProgressbarHP: function(){
+//         character.elProgressbar.style.width = character.damageHP + '%';
+//     },
    
-    changeHP: function(count) {
-        if(this.damageHP<count) {
-            this.damageHP=0;
-            alert('Бедный '+ this.name+' проиграл бой!');
-            $btn.disabled = true;
-        }else{
-            this.damageHP -= count;
-        }
-        renderHP();
+//     changeHP: function(count) {
+//         if(character.damageHP<count) {
+//             character.damageHP=0;
+//             alert('Бедный '+ character.name+' проиграл бой!');
+//             $btn.disabled = character;
+//         }else{
+//             character.damageHP -= count;
+//         }
+//         renderHP();
 
-        const log = this === character ? generateLog(this, enemy) : generateLog(this, character);
-        const $p = document.createElement('p');
-        $p.innerText=log;
-        $logs.appendChild($p);
-    }  
-}
-const enemy = {
-    name: 'Charmander',
-    defaultHP: 100,
-    damageHP: 100,
-    elHP: document.getElementById('health-enemy'),
-    elProgressbar: document.getElementById('progressbar-enemy'),
+//         const log = character === character ? generateLog(character, enemy) : generateLog(character, character);
+//         const $p = document.createElement('p');
+//         $p.innerText=log;
+//         $logs.appendChild($p);
+//     }  
+// }
+// export const enemy = {
+//     name: 'Charmander',
+//     defaultHP: 100,
+//     damageHP: 100,
+//     elHP: document.getElementById('health-enemy'),
+//     elProgressbar: document.getElementById('progressbar-enemy'),
    
    
-    renderHPLife: function(){
-        const $character = document.getElementById('health-character');
-        console.log($character.innerText);
-        $character.innerText=this.damageHP+'/'+ this.defaultHP;
-    },    
-    renderHPLife: function(){
-        this.elHP.innerText=this.damageHP + ' / ' + this.defaultHP;
-    },    
-    renderProgressbarHP: function(){
-        this.elProgressbar.style.width = this.damageHP + '%';
-    },
+//     renderHPLife: function(){
+//         const $character = document.getElementById('health-character');
+//         console.log($character.innerText);
+//         $character.innerText=enemy.damageHP+'/'+ enemy.defaultHP;
+//     },    
+//     renderHPLife: function(){
+//         enemy.elHP.innerText=enemy.damageHP + ' / ' + enemy.defaultHP;
+//     },    
+//     renderProgressbarHP: function(){
+//         enemy.elProgressbar.style.width = enemy.damageHP + '%';
+//     },
    
-    changeHP: function(count) {
-        if(this.damageHP<count) {
-            this.damageHP=0;
-            alert('Бедный '+ this.name+' проиграл бой!');
-            $btn2.disabled = true;
-        }else{
-            this.damageHP -= count;
-        }
-        renderHP();
+//     changeHP: function(count) {
+//         if(enemy.damageHP<count) {
+//             enemy.damageHP=0;
+//             alert('Бедный '+ enemy.name+' проиграл бой!');
+//             $btn2.disabled = enemy;
 
-        const log = this === enemy ? generateLog(this, character) : generateLog(this, enemy);
-        const $p = document.createElement('p');
-        $p.innerText=log;
-        $logs.appendChild($p);
-    }  
-}
+//         }else{
+//             enemy.damageHP -= count;
+//         }
+//         renderHP();
 
-$btn.addEventListener('click', function(){
-    console.log('Kick');
-    character.changeHP(random(20));
-});
-
-$btn2.addEventListener('click', function(){
-    console.log('Kick');
-    enemy.changeHP(random(20));
-});
-
-function renderHP(){
-    character.renderHPLife();
-    character.renderProgressbarHP();
-    enemy.renderHPLife();
-    enemy.renderProgressbarHP();
-};
-
-function init() {
-    console.log('Start Game!');
-    // renderHP(character);
-    // renderHP(enemy);
-};
-
-
-init();
-
+//         const log = enemy === enemy ? generateLog(enemy, character) : generateLog(enemy, enemy);
+//         const $p = document.createElement('p');
+//         $p.innerText=log;
+//         $logs.appendChild($p);
+//     }  
+// }
+// function renderHP(){
+//     character.renderHPLife();
+//     character.renderProgressbarHP();
+//     enemy.renderHPLife();
+//     enemy.renderProgressbarHP();
+// };
